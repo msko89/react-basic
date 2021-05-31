@@ -5,8 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>React Basic</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+      }
+      #root p {
+        color: royalblue;
+        font-size: 20px;
+        background-color: orange;
+      }
+    </style>
   </head>
   <body>
+    <div id="root"></div>
+
     <script
       crossorigin
       src="https://unpkg.com/react@17/umd/react.development.js"
@@ -15,9 +29,31 @@
       crossorigin
       src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
     ></script>
-    <script type="text/javascript">
-      console.log(React);
-      console.log(ReactDOM);
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      // console.log(React);
+      // console.log(ReactDOM);
+
+      // 정의
+      // class ClassComponent extends React.Component {
+      //   render() {
+      //     return <h1>Hello React</h1>;
+      //   }
+      // }
+
+      // // 사용
+      // ReactDOM.render(<ClassComponent />, document.querySelector('#root'));
+
+      // 정의 1
+      // function FunctionComponent() {
+      //   return <h1>Hello React</h1>;
+      // }
+
+      // 정의 2
+      const FunctionComponent = () => <h1>Hello React</h1>;
+
+      // 사용
+      ReactDOM.render(<FunctionComponent />, document.querySelector('#root'));
     </script>
   </body>
 </html>
