@@ -91,35 +91,43 @@
       //   );
       // }
 
-      class Component extends React.Component {
-        // state = {
-        //   count: 0,
-        // };
+      // class Component extends React.Component {
+      //   // state = {
+      //   //   count: 0,
+      //   // };
 
-        constructor(props) {
-          super(props);
+      //   constructor(props) {
+      //     super(props);
 
-          this.state = { count: 0 };
-        }
+      //     this.state = { count: 0 };
+      //   }
 
-        componentDidMount() {
-          setTimeout(() => {
-            // this.setState({ count: this.state.count + 1 });
-            this.setState((previousState) => {
-              const newState = { count: previousState.count + 1 };
-              return newState;
-            });
-          }, 1000);
-        }
+      //   componentDidMount() {
+      //     setTimeout(() => {
+      //       // this.setState({ count: this.state.count + 1 });
+      //       this.setState((previousState) => {
+      //         const newState = { count: previousState.count + 1 };
+      //         return newState;
+      //       });
+      //     }, 1000);
+      //   }
 
-        render() {
-          return (
-            <div>
-              <h1>{this.props.message}</h1>
-              <p>{this.state.count}</p>
-            </div>
-          );
-        }
+      //   render() {
+      //     return (
+      //       <div>
+      //         <h1>{this.props.message}</h1>
+      //         <p>{this.state.count}</p>
+      //       </div>
+      //     );
+      //   }
+      // }
+
+      function Component(props) {
+        return (
+          <div>
+            <button onClick={() => console.log('button Click')}>클릭</button>
+          </div>
+        );
       }
 
       ReactDOM.render(
