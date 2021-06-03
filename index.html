@@ -81,22 +81,49 @@
       // );
 
       // 4. 복잡한 리액트 엘리먼트 모임
+      // ReactDOM.render(<h1>Hello</h1>, document.querySelector('#root'));
+
+      // function Component(props) {
+      //   return (
+      //     <div>
+      //       <h1>{props.message}</h1>
+      //     </div>
+      //   );
+      // }
+
+      class Component extends React.Component {
+        // state = {
+        //   count: 0,
+        // };
+
+        constructor(props) {
+          super(props);
+
+          this.state = { count: 0 };
+        }
+
+        componentDidMount() {
+          setTimeout(() => {
+            // this.setState({ count: this.state.count + 1 });
+            this.setState((previousState) => {
+              const newState = { count: previousState.count + 1 };
+              return newState;
+            });
+          }, 1000);
+        }
+
+        render() {
+          return (
+            <div>
+              <h1>{this.props.message}</h1>
+              <p>{this.state.count}</p>
+            </div>
+          );
+        }
+      }
+
       ReactDOM.render(
-        React.createElement(
-          'div',
-          null,
-          React.createElement(
-            'div',
-            null,
-            React.createElement('h1', null, 'JS Library'),
-            React.createElement(
-              'ul',
-              null,
-              React.createElement('li', null, 'React'),
-              React.createElement('li', null, 'Vue')
-            )
-          )
-        ),
+        <Component message="Props test" />,
         document.querySelector('#root')
       );
     </script>
