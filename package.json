@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prepare": "husky install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/msko89/react-basic/issues"
   },
-  "homepage": "https://github.com/msko89/react-basic#readme"
+  "homepage": "https://github.com/msko89/react-basic#readme",
+  "devDependencies": {
+    "husky": "^6.0.0"
+  }
 }
